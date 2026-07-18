@@ -1,0 +1,14 @@
+## custom service injected into init.rc
+# Use ${MAGISKTMP} to reference Magisk tmpfs folder
+
+on late-start
+    chmod 0755 ${MAGISKTMP}/start_adbip.sh
+    mkdir /data/local/tmp 0755 root root
+    start start_adbip_service
+
+service start_adbip_service ${MAGISKTMP}/start_adbip.sh
+    class main
+    user root
+    group root
+    oneshot
+    seclabel u:r:init:s0

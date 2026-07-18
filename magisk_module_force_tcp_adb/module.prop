@@ -1,0 +1,6 @@
+id=force_tcp_adb
+name=Force TCP ADB (F50 Mac fix)
+version=v1.0
+versionCode=1
+author=xioshark
+description=On boot: sys.usb.config=mtp,adb and adbd TCP 5555 so Mac can adb connect 192.168.0.1:5555
